@@ -1,4 +1,7 @@
 package fr.fms.dao;
 
-public interface BookRepository {
+import fr.fms.entities.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Long, Book> {
 }

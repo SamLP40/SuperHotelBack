@@ -1,4 +1,7 @@
 package fr.fms.dao;
 
-public interface RoomRepository {
+import fr.fms.entities.Room;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RoomRepository extends JpaRepository<Long, Room> {
 }

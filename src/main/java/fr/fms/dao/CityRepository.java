@@ -1,4 +1,7 @@
 package fr.fms.dao;
 
-public interface CityRepository {
+import fr.fms.entities.City;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CityRepository extends JpaRepository<Long, City> {
 }
