@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Hotel {
+public class Hotel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,6 +23,7 @@ public class Hotel {
     private int numberStars;
     private int numberRooms;
     private double lowestPrice;
-    @ManyToOne(fetch = FetchType.EAGER)
+
+    @ManyToOne
     private City city;
 }

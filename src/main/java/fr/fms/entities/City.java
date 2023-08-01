@@ -1,5 +1,6 @@
 package fr.fms.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,13 +8,15 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.io.Serializable;
+import java.lang.Long;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class City {
+public class City implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +24,7 @@ public class City {
     private String name;
     private String country;
     @OneToMany(fetch=FetchType.EAGER)
-    @JoinColumn(referencedColumnName = "hotel")
+    @JsonIgnore
+    @JoinColumn(name = "hotel_id")
     private Collection<Hotel> hotel;
 }
