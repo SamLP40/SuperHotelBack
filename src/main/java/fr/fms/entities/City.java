@@ -24,7 +24,5 @@ public class City implements Serializable {
     private String name;
     private String country;
     @OneToMany(fetch=FetchType.EAGER)
-    @JsonIgnore
-    @JoinColumn(name = "hotel_id")
     private Collection<Hotel> hotel;
 }

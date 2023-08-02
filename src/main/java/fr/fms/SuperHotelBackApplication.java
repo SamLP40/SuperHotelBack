@@ -11,6 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Collection;
 
+/**
+ * @author LePorcherS
+ */
 @SpringBootApplication
 public class SuperHotelBackApplication implements CommandLineRunner {
 	@Autowired
@@ -28,10 +31,11 @@ public class SuperHotelBackApplication implements CommandLineRunner {
 
 	}
 
-	private void generateData() {
 
-//		City bali = cityRepository.save(new City(null, "Bali", "Indonésie", null));
-//		hotelRepository.save(new Hotel(null, "Golden Sands Resort", "1 rue du sable", "0333343536", 3, 50, 98.90,bali));
+	private void generateDatas() {
+
+		City bali = cityRepository.save(new City(null, "Bali", "Indonésie", null));
+		hotelRepository.save(new Hotel(null, "Golden Sands Resort", "1 rue du sable", "0333343536", 3, 50, 98.90, bali));
 
 	}
 }

@@ -1,5 +1,6 @@
 package fr.fms.service;
 
+import fr.fms.entities.City;
 import fr.fms.entities.Hotel;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface HotelRoomService {
     public void deleteHotel();
     public List<Hotel> getHotels();
 
+    City getCity(Long id);
 }

@@ -2,6 +2,7 @@ package fr.fms.service;
 
 import fr.fms.dao.CityRepository;
 import fr.fms.dao.HotelRepository;
+import fr.fms.entities.City;
 import fr.fms.entities.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,4 +35,6 @@ public class HotelRoomServiceImpl implements HotelRoomService {
     }
 
     public List<Hotel> getHotels() { return hotelRepository.findAll();}
+    public City getCity(Long id) { return cityRepository.getById(id);}
+
 }
